@@ -9,11 +9,11 @@ export const initialState = {
 export const reducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.FETCH_START:
-      null;
+      return { ...state, isLoading: true };
     case ACTIONS.FETCH_START:
-      null;
+      return { ...state, products: action.payload, isLoading: false };
     case ACTIONS.FETCH_START:
-      null;
+      return { ...state, isError: action.payload, isLoading: false };
     case 'default':
       state;
   }

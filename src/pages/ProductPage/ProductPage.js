@@ -1,19 +1,38 @@
 import React, { useReducer, useEffect } from 'react';
 import { reducer, initialState } from '../../reducers/ProductPageReducer';
+import { ACTIONS } from '../../actions/actions';
 import { API_URL } from '../../helpers/config';
 import { getJSON } from '../../helpers/helpersFn';
 import { Container, Row, Col } from 'react-bootstrap';
 
+console.log();
+
 const ProductPage = () => {
-  const [state, setState] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  console.log(state);
 
   useEffect(() => {
-    const getProducts = async () => {
-      const data = await getJSON(`${API_URL}/all`);
-      console.log(data);
-    };
-    getProducts();
-  });
+    dispatch({
+      type: ACTIONS.FETCH_START,
+    });
+    try {
+      const getProducts = async () => {
+        const data = await getJSON(`${API_URL}/all`);
+        console.log(data);
+        dispatch({
+          type: ACTIONS.FETCH_SUCCESS,
+          payload: data,
+        });
+      };
+      getProducts();
+    } catch (err) {
+      dispatch({
+        type: ACTIONS.FETCH_ERROR,
+        payload: err,
+      });
+    }
+  }, []);
 
   return (
     <Container>
