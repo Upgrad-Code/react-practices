@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const ProductPage = () => {
