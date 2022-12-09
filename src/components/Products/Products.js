@@ -20,9 +20,9 @@ export const Products = ({ products }) => {
                   <Card.Body>
                     <Card.Title className="product__title">
                       {p.name.common}
+                      <sup> {p.continents[0]}</sup>
                     </Card.Title>
                     <Card.Text></Card.Text>
-                    <Button variant="primary"></Button>
                   </Card.Body>
                 </Card>
               </Col>
