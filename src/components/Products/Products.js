@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import './Products.scss';
 
 export const Products = ({ products }) => {
@@ -10,7 +10,7 @@ export const Products = ({ products }) => {
         {products &&
           products.map((p) => {
             return (
-              <Col md={3}>
+              <Col md={3} key={p.cca3}>
                 <Card className="product">
                   <Card.Img
                     variant="top"
