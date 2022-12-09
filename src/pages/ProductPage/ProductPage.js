@@ -18,8 +18,7 @@ const ProductPage = () => {
     });
     try {
       const getProducts = async () => {
-        const data = await getJSON(`${API_URL}/a`);
-        console.log(data);
+        const data = await getJSON(`${API_URL}/all`);
         dispatch({
           type: ACTIONS.FETCH_SUCCESS,
           payload: data,
