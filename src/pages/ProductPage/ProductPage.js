@@ -4,13 +4,12 @@ import { ACTIONS } from '../../actions/actions';
 import { API_URL } from '../../helpers/config';
 import { getJSON } from '../../helpers/helpersFn';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Products } from '../../components/Products/Products';
 
 console.log();
 
 const ProductPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  console.log(state);
 
   useEffect(() => {
     dispatch({
@@ -37,6 +36,9 @@ const ProductPage = () => {
     <Container>
       <Row>
         <Col md={12}>Running product page.</Col>
+        <Col>
+          <Products products={state.products} />
+        </Col>
       </Row>
     </Container>
   );
