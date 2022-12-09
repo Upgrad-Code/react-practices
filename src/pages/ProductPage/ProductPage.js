@@ -33,14 +33,11 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        <Col md={12}>Running product page.</Col>
-        <Col>
-          <Products products={state.products} />
-        </Col>
-      </Row>
-    </Container>
+    <section className="product__page">
+      <Container>
+        <Products products={state.products} />
+      </Container>
+    </section>
   );
 };
 
