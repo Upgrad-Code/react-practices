@@ -35,6 +35,15 @@ const ProductPage = () => {
   return (
     <section className="product__page">
       <Container>
+        <Row>
+          <Col md={12}>
+            <ButtonGroup aria-label="Basic example">
+              <Button variant="secondary">Left</Button>
+              <Button variant="secondary">Middle</Button>
+              <Button variant="secondary">Right</Button>
+            </ButtonGroup>
+          </Col>
+        </Row>
         <Products products={state.products} />
       </Container>
     </section>
